@@ -33,6 +33,6 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: seethatgee/duo-deploy-nginx
+        image: seethatgee/duo-deploy-nginx:latest
         ports:
         - containerPort: 80
