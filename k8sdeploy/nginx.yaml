@@ -51,9 +51,9 @@ spec:
         app: nginx
     spec:
       volumes:
-      - name:
+      - name: nginx-config-vol
         configMap:
-          name: nginx-config-vol
+          name: nginx-config
       containers:
       - name: nginx-container
         image: nginx:latest
