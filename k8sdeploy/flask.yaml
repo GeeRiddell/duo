@@ -34,5 +34,6 @@ spec:
       containers:
       - name: flask-container
         image: seethatgee/duo-deploy-flask:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 5500
