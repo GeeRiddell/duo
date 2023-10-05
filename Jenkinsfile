@@ -21,7 +21,8 @@ pipeline {
                 docker system prune -a --force
                 '''
             }
-        }        stage('Deploy') {
+        }        
+        stage('Deploy') {
             steps {
                 sh '''
                 kubectl apply -f ./k8sdeploy
