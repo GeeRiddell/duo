@@ -15,20 +15,19 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy') {
+        stage('Clean Up') { 
+            steps {
+                sh '''
+                docker system prune -a --force
+                '''
+            }
+        }        stage('Deploy') {
             steps {
                 sh '''
                 kubectl apply -f ./k8sdeploy
                 kubectl rollout restart deployment flask-deployment
                 '''
 
-            }
-        }
-        stage('Clean Up') { 
-            steps {
-                sh '''
-                docker system prune -a --force
-                '''
             }
         }
     }
