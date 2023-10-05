@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: seethatgee/duo-deploy-flask:latest
+        image: seethatgee/duo-flask-jenkins:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5500
