@@ -15,14 +15,13 @@ pipeline {
                 '''
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         sh '''
-        //         kubectl apply -f .
-        //         kubectl rollout restart deployment flask-deployment
-        //         '''
+        stage('Deploy') {
+            steps {
+                sh '''
+                kubectl rollout restart deployment flask-deployment
+                '''
 
-        //     }
-        // }
+            }
+        }
     }
 }
