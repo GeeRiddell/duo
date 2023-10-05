@@ -14,21 +14,20 @@ pipeline {
                 docker push seethatgee/duo-flask-jenkins:latest 
                 '''
             }
-        }
-        stage('Clean Up') { 
+        }     
+        stage('cleanup') {
             steps {
                 sh '''
                 docker system prune -a --force
                 '''
             }
-        }        
+        }     
         stage('Deploy') {
             steps {
                 sh '''
                 kubectl apply -f ./k8sdeploy
                 kubectl rollout restart deployment flask-deployment
                 '''
-
             }
         }
     }
