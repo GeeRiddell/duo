@@ -4,14 +4,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t seethatgee/duo-nginx-jenkins:latest ./nginx
+                docker build -t seethatgee/duo-flask-jenkins:latest .
                 '''
             }
         }
         stage('Push') {
             steps {
                 sh '''
-                docker push seethatgee/duo-flask-jenkins:latest .
+                docker push seethatgee/duo-flask-jenkins:latest 
                 '''
             }
         }
